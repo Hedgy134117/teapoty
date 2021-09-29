@@ -8,15 +8,27 @@ html, body {
   color: var(--text-color);
 }
 
+body {
+  padding: var(--body-padding-tb) var(--body-padding-lr);
+}
+
 :root {
+  --body-padding-lr: 10em;
+  --body-padding-tb: 2em;
   --bg-color: #1d1d1d;
   --text-color: #f3f3f3;
+  --sub-text-color: #808080;
 
   --nav-height: 100px;
   --nav-padding: 2em;
   --nav-columns: 3;
   --nav-font: 'Open Sans', sans-serif;
   --nav-font-weight: 300;
+
+  --hero-title-font: 'Playfair Display', serif;
+  --hero-medium-gray: #626262;
+  --hero-dark-gray: #363636;
+  --hero-light-gray: #999999;
 }
 
 .logo-bg {
@@ -29,23 +41,26 @@ html, body {
 
 nav {
   height: var(--nav-height);
-  padding: var(--nav-padding);
   display: grid;
   grid-template-columns: 20% 60% 20%;
 }
 
-.nav__item--logo {
+nav p {
+  margin: 0;
+}
+
+.nav__logo {
   height: 100%;
   border-radius: 10%;
 }
 
-.nav__item--links {
+.nav__links {
   display: flex;
   flex-direction: row;
   align-items: center; /* vertical */
   justify-content: space-evenly; /* horizontal */
 }
-.nav__item--links a {
+.nav__links a {
   color: var(--text-color);
   text-decoration: none;
   font-family: var(--nav-font);
@@ -53,13 +68,65 @@ nav {
   font-size: 1.2em;
 }
 
-.nav__item--actions {
+.nav__actions {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
-.nav__item--actions > p {
+.nav__actions > p {
   padding: 0 1em;
   font-size: 2em;
+}
+
+.hero {
+  padding-top: var(--nav-height);
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.hero h1 {
+  margin: 0;
+}
+
+.hero__title {
+  font-family: var(--hero-title-font);
+  font-size: 6em;
+}
+
+.hero__subtitle {
+  font-family: var(--nav-font);
+  color: var(--sub-text-color);
+}
+
+.hero__images {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+}
+
+.hero__image {
+  margin: 1em;
+}
+
+.hero__image--2row {
+  grid-row: 1 / 3;
+}
+
+.hero__image--rounded {
+  border-radius: 200px;
+}
+
+.hero__image--top-rounded {
+  border-radius: 200px 200px 0 0;
+}
+
+.hero__image--medium-gray {
+  background-color: var(--hero-medium-gray);
+}
+.hero__image--light-gray {
+  background-color: var(--hero-light-gray);
+}
+.hero__image--dark-gray {
+  background-color: var(--hero-dark-gray);
 }
